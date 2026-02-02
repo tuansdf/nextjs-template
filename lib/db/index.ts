@@ -7,3 +7,5 @@ const pool = new Pool({
 });
 
 export const db = drizzle({ client: pool, schema });
+
+await db.execute("select 1");
