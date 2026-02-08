@@ -5,7 +5,6 @@ import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { admin } from "better-auth/plugins";
 
 export const auth = betterAuth({
-  baseURL: env.BASE_URL,
   cookieCache: {
     enabled: true,
     maxAge: 5 * 60,
