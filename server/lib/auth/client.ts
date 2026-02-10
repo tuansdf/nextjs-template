@@ -1,7 +1,8 @@
-import { env, isDevelopment } from "@/server/lib/config/env";
+import { isDevelopment } from "@/server/lib/config/env";
 import { db } from "@/server/lib/db/client";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
+import { nextCookies } from "better-auth/next-js";
 import { admin } from "better-auth/plugins";
 
 export const auth = betterAuth({
@@ -25,5 +26,5 @@ export const auth = betterAuth({
   emailAndPassword: {
     enabled: true,
   },
-  plugins: [admin()],
+  plugins: [admin(), nextCookies()],
 });
